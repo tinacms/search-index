@@ -27,14 +27,14 @@ module.exports = (ops, cache) => {
     requestedDocs.length
       ? Promise.all(
         requestedDocs.map(_id =>
-          ops.fii.STORE.get(['DOC_RAW', _id]).catch(e => null)
+          ops.fii.STORE.get(['DOC_RAW', _id], ops.fii.LEVEL_OPTIONS).catch(e => null)
         )
       )
       : ALL_DOCUMENTS()
 
   const DOCUMENT_VECTORS = (...requestedDocs) =>
     Promise.all(
-      requestedDocs.map(_id => ops.fii.STORE.get(['DOC', _id]).catch(e => null))
+      requestedDocs.map(_id => ops.fii.STORE.get(['DOC', _id], ops.fii.LEVEL_OPTIONS).catch(e => null))
     )
 
   const DICTIONARY = token =>
@@ -226,7 +226,7 @@ module.exports = (ops, cache) => {
       .sort(sortFunction[options.TYPE][options.DIRECTION])
   }
 
-  const DOCUMENT_COUNT = () => ops.fii.STORE.get(['DOCUMENT_COUNT'])
+  const DOCUMENT_COUNT = () => ops.fii.STORE.get(['DOCUMENT_COUNT'], ops.fii.LEVEL_OPTIONS)
 
   const WEIGHT = (results, weights) =>
     results.map(r => {

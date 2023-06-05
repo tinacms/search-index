@@ -1,6 +1,6 @@
 {
-  "name": "@kldavis4/search-index",
-  "version": "4.4.0",
+  "name": "@tinacms/search-index",
+  "version": "3.5.0",
   "description": "A network resilient, persistent full-text search library for the browser and Node.js",
   "keywords": [
     "search",
@@ -74,7 +74,7 @@
     "browser-level": "^1.0.1",
     "charwise": "^3.0.1",
     "memory-level": "^1.0.0",
-    "@kldavis4/fergies-inverted-index": "^12.0.0",
+    "@kldavis4/fergies-inverted-index": "^12.0.2",
     "level-read-stream": "^1.1.0",
     "lru-cache": "^7.9.0",
     "ngraminator": "^3.0.1",

@@ -12,7 +12,8 @@ module.exports = (ops, cache) => {
         // lte: undefined,
         gte: ['DOC_RAW', null],
         lte: ['DOC_RAW', undefined],
-        limit
+        limit,
+        ...ops.fii.LEVEL_OPTIONS
       })
         .on('data', d =>
           result.push({
